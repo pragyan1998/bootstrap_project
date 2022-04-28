@@ -1,0 +1,45 @@
+player class Main{
+  public static void main(String[]args){
+
+  Player player = getPlayer("Harry",1000);
+  System.out.println(player.isAlive());
+  System.out.println(player.hitpoint);
+  player.getHit(500);
+  player.getHit(200);
+  player.getHit(400);
+  System.out.println(player.isAlive());
+  System.out.println(player.hitPoint);
+  }
+  static Player getPlayer(String playerName,int hitPoint){
+  String name;
+  int point;
+  name=playerName;
+  point=hitPoint;
+  return new Player(name,point);
+  }
+  }
+  public class Player{
+  String playerName;
+  int hitPoint;
+  boolean alive;
+  //constructor
+  Player(String playerName,int hitPoint){
+  this.playerName=playerName;
+  this.hitPoint;
+  this.alive=true
+  }
+  //copy constructor
+  Player(String playerName){
+  this(playerName,100);
+  }
+ void getHit(int damage){
+ hitPoint=hitPoint-damage;
+ if(hitPoint<0){
+ hitPoint =0;
+ alive= false;
+ }
+ }
+ boolean isAlive(){
+ return alive;
+ }
+ }
